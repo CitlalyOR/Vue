@@ -1,0 +1,15 @@
+Micomponente
+DIRECTIVAS:
+-------------
+Son atributos especiales con el prefijo v, que puedes aplicar a los elementos de las plantillas 
+
+* direcctiva = v-if
+--------------------------------------------
+BOTON:
+<template> 
+    <div id="mi-componente">
+            <h1> Esto es una prueba de mi componente</h1>
+            <h2 v-if="isVisible">{{ subtitulo }}</h2>  //NUEVA VARIABLE (isVisible)
+            <button v-on:click="$event => isVisible = !isVisible">Toggle Visibility</button> 
+    </div>    
+</template>

@@ -1,0 +1,39 @@
+<template> 
+    <div id="mi-componente"> //Dentro de una etiqueta "div" se imprime el elemento
+            <hr/>
+            <h1> Esto es una prueba de mi componente</h1>
+            <h2> {{ subtitulo }}</h2>
+            <hr/>
+    </div>    
+</template>
+
+<script>    //aqui va todo el codigo de Vue
+export default {
+    name:'MiComponente',        //Nombre de mi componente
+    data() {                    //propiedad o metodo 
+        return {                //devuelve a la vista lo que quiero mostrar
+            subtitulo: 'Sub del componente'     //Puedo crear propieddes, y estas seran mostradas desde  las dobles llaves{{ }} en el h2
+        }
+    }
+
+}
+</script>
+
+MiComponente2
+
+NOTA:
+-Un componente es una parte de la aplicacion que hace algun tipo de funcionalidad
+-El componente debe registrarse en la App.vue  con "import + el nombre del componente from './carpeta "components"/nombredelarchivo.vue'"
+
+---------------------------------------------------------------------------------------------------
+Micomponente
+DIRECTIVAS:
+-------------
+Son atributos especiales con el prefijo v, que puedes aplicar a los elementos de las plantillas 
+
+* direcctiva = v-if
+
+
+--------------------------------------------------------------------------------------------------
+EVENTOS
+--------

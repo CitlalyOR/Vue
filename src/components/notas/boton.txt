@@ -1,0 +1,30 @@
+METODOS
+------------
+*cAMBIARA EL VALOR DE: isVisible\
+el boton que muestra y oculta la propiedad (subtitulo)
+
+-Micomponente.vue-
+<template> 
+    <div id="mi-componente">
+            <h1> Esto es una prueba de mi componente</h1>
+            <h2 v-if="isVisible">{{ subtitulo }}</h2>  //NUEVA VARIABLE (isVisible)
+            <button v-on:click="toogleVisibility">Toggle Visibility</button> 
+    </div>    
+</template>
+------------------------------------------------
+<script>    //aqui va todo el codigo de Vue
+export default {
+    name:'MiComponente',        //Nombre de mi componente
+    data() {                    //propiedad o metodo 
+        return {                //devuelve a la vista lo que quiero mostrar
+            subtitulo: 'Sub del componente',     //Puedo crear propieddes, y estas seran mostradas desde  las dobles llaves{{ }} en el h2
+            isVisible: true
+        }
+    },
+    methods: {
+        toogleVisibility() {
+            this.isVisible + !this.isVisible;
+        }
+    }
+}
+</script>

@@ -1,0 +1,40 @@
+DIRECTIVA: v-for
+Permite renderizar una lista de elementos basada en un arreglo.
+
+<template> 
+    <div id="mi-componente">
+            <h2 v-if="isVisible">{{ subtitulo }}</h2>  
+            <button v-on:click="$event => isVisible = !isVisible">Mostrar</button> 
+            <button v-on:click="sayHello">Alerta</button> 
+            <input v-model="subtitulo">
+
+            <ul>
+                <li v-for="item in list" :key="item.id"> {{ item.text }}</li>  //Se crea una lista desordenada, donde se define un list item, por cada uno de los item que estan en la lista, se imprimira el valor en> {{item.text}}, el key es para un identificador unico 
+            </ul>
+    </div>    
+</template>
+
+
+
+<script>    //aqui va todo el codigo de Vue
+export default {
+    name:'MiComponente',        //Nombre de mi componente
+    data() {                    //propiedad o metodo 
+        return {                //devuelve a la vista lo que quiero mostrar
+            subtitulo: 'Sub del componente',     //Puedo crear propieddes, y estas seran mostradas desde  las dobles llaves{{ }} en el h2
+                                                // la propiedad subtitulo, se actualiza con el v-model
+            isVisible: true,                    // se puede aplicar a los elementos de las plantillas 
+            list: [                             //se crea una lista de elementos en la seccion data 
+                { id: 1, text: 'Primer item' },
+                { id: 1, text: 'Segundo item' },
+                { id: 1, text: 'Tercer item' }
+            ]                     
+        }
+    },
+methods : {
+    sayHello() {
+        alert('Hello!');
+    }
+}
+}
+</script>

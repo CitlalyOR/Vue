@@ -1,0 +1,29 @@
+DIRECTIVA: v-model 
+--------------------
+Para crear un enlace bidireccinal entre un input y una propiedad de datos.
+El imput (caja de texto) cambia la propiedad de dato (subtitulo) y es la que se mostrara en pantalla
+
+mediante la propiedad en el script, 
+<script>    //aqui va todo el codigo de Vue
+export default {
+    name:'MiComponente',        //Nombre de mi componente
+    data() {                    //propiedad o metodo 
+        return {                //devuelve a la vista lo que quiero mostrar
+            subtitulo: 'Sub del componente',     //Puedo crear propieddes, y estas seran mostradas desde  las dobles llaves{{ }} en el h2
+                                                // la propiedad subtitulo, se actualiza con el v-model
+            isVisible: true
+        }
+    }
+}
+</script>
+
+
+*se actualizara en el *template* el (input)
+<template> 
+    <div id="mi-componente">
+            <h1> Esto es una prueba de mi componente</h1>
+            <h2 v-if="isVisible">{{ subtitulo }}</h2>  
+            <button v-on:click="$event => isVisible = !isVisible">Mostrar sub2</button> 
+            <input v-model="subtitulo">
+    </div>    
+</template>

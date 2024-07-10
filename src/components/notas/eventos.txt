@@ -1,0 +1,32 @@
+EVENTOS
+Son acciones o sucesos que ocurren debido a la interaccion del usuario con la aplicacion.
+
+DIRECTIVA: v-on 
+
+<template> 
+    <div id="mi-componente">
+            <h2 v-if="isVisible">{{ subtitulo }}</h2>  
+            <button v-on:click="sayHello">Mostrar sub2</button> 
+            <input v-model="subtitulo">
+    </div>    
+</template>
+
+
+
+<script>    //aqui va todo el codigo de Vue
+export default {
+    name:'MiComponente',        //Nombre de mi componente
+    data() {                    //propiedad o metodo 
+        return {                //devuelve a la vista lo que quiero mostrar
+            subtitulo: 'Sub del componente',     //Puedo crear propieddes, y estas seran mostradas desde  las dobles llaves{{ }} en el h2
+                                                // la propiedad subtitulo, se actualiza con el v-model
+            isVisible: true
+        }
+    },
+methods : {
+    sayHello() {
+        alert('Hello!');
+    }
+}
+}
+</script>
